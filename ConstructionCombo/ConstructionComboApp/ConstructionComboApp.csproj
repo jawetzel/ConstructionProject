@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\assets\displayImages\Tile\bathTub.jpg" />
+    <Content Include="wwwroot\assets\displayImages\Tile\Flooring.jpg" />
+    <Content Include="wwwroot\assets\displayImages\Tile\Shower.jpg" />
+    <Content Include="wwwroot\assets\displayImages\Wood\HardWoodFloor.jpg" />
+    <Content Include="wwwroot\assets\LogoWithName.jpg" />
+    <Content Include="wwwroot\assets\TilePttern.jpg" />
+    <Content Include="wwwroot\assets\UpdatedLogo.jpg" />
+    <Content Include="wwwroot\favicon.ico" />
+    <Content Include="wwwroot\index.html" />
+    <Content Include="wwwroot\inline.0ea5f0727c8c2346e162.bundle.js" />
+    <Content Include="wwwroot\inline.16150bdfe610382cc4d3.bundle.js" />
+    <Content Include="wwwroot\main.0ef3fa824e85a1222368.bundle.js" />
+    <Content Include="wwwroot\polyfills.18173234f9641113b9fe.bundle.js" />
+    <Content Include="wwwroot\styles.581137b5b37b0274fbaa.bundle.css" />
+    <Content Include="wwwroot\TilePttern.2dae2fc774e8ef215d82.jpg" />
+    <Content Include="wwwroot\vendor.f2e86e63959f74af6853.bundle.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

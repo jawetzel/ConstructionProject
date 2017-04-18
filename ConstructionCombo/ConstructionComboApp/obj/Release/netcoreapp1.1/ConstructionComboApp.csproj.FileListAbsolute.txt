@@ -1,0 +1,9 @@
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Release\netcoreapp1.1\ConstructionComboApp.deps.json
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Release\netcoreapp1.1\ConstructionComboApp.runtimeconfig.json
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Release\netcoreapp1.1\ConstructionComboApp.runtimeconfig.dev.json
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Release\netcoreapp1.1\ConstructionComboApp.dll
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Release\netcoreapp1.1\ConstructionComboApp.pdb
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\Release\netcoreapp1.1\ConstructionComboApp.csprojResolveAssemblyReference.cache
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\Release\netcoreapp1.1\ConstructionComboApp.AssemblyInfo.cs
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\Release\netcoreapp1.1\ConstructionComboApp.dll
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\Release\netcoreapp1.1\ConstructionComboApp.pdb
