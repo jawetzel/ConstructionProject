@@ -1,0 +1,51 @@
+.contentSection{
+  min-height: 100%;
+  text-align: center;
+}
+
+.displayPhoto{
+  height: 290px;
+  display: inline-block;
+  margin: auto;
+
+}
+.photoSection{
+  display: inline-block;
+}
+.displayColumn{
+  width: calc(100% - 30px);
+  margin: 15px;
+  height: calc(100% - 350px);
+  min-height: 450px;
+}
+.imageDisplayColumn{
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.textDisplayColumn{
+  border-radius: 15px;
+}
+.displayTextHeader{
+  max-width: 950px;
+  padding: 10px;
+  padding-top: 125px;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+  color: white;
+  font-family: sans-serif, 'Montserrat';
+  text-transform: capitalize;
+  margin: auto;
+}
+.displayText{
+  max-width: 845px;
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 500;
+  color: white;
+  font-family: sans-serif, 'Montserrat';
+  text-transform: capitalize;
+  margin: auto;
+}

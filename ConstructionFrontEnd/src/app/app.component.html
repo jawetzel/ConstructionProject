@@ -1,0 +1,37 @@
+<div class="fullWidth siteHeader top centerTextAlign">
+  <div class="fullHeight titleArea inLineBlock">
+    <a [routerLink]="['/']"><img class="fullHeight pull-left floatLeft logoImg" src="../assets/LogoWithName.jpg"/></a>
+  </div>
+  <div class="siteHeaderSpacer inLineBlock"></div>
+  <div class="linkArea inLineBlock">
+    <div class="linkColumn floatRight">
+      <div  class="headerButton floatRight"><a [routerLink]="['/']">Home</a></div>
+      <div class="headerButton floatRight"><a [routerLink]="['/contact']">Contact</a></div>
+    </div>
+    <form *ngIf="disabledContent" name="loginForm" (ngSubmit)="attemptLogin(f)" #f="ngForm">
+      <div *ngIf="loginClicked" class="loginArea floatRight">
+          <label for="username"></label>
+          <input type="text" id="username" ngModel name="username" class="headerButton floatRight loginInput">
+          <label for="password"></label>
+          <input type="password" id="password" ngModel name="password" class="headerButton floatRight loginInput">
+      </div>
+      <div *ngIf="!loginClicked" class="loginArea floatRight">
+        <div (click)="toggleLoginFields()" class="headerButton floatRight">Login</div>
+        <div class="headerButton floatRight"><a [routerLink]="['/register']"></a>Register</div>
+      </div>
+      <button *ngIf="loginClicked" type="submit" class="headerButton floatRight loginButton">Login</button>
+    </form>
+  </div>
+</div>
+<div class="siteBody">
+  <router-outlet></router-outlet>
+</div>
+<div class="siteFooter">
+  <div class="footerSpan floatLeft">
+    <a href="https://www.facebook.com/b2kconstructionllc2000">B2KConstruction</a>
+  </div>
+  <div class="floatLeft footerSpacer footerSpan">|</div>
+  <div class="footerSpan floatLeft">
+    Phone: 985-227-8857
+  </div>
+</div>
