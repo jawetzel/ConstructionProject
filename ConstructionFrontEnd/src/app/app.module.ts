@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import {constructionApi} from './servers/constructionApi';
 
 import {RouterModule, Routes} from '@angular/router';
 import { RegisterComponent } from './ContentPages/register/register.component';
 import { AboutComponent } from './ContentPages/about/about.component';
 import { HomeComponent } from './ContentPages/home/home.component';
 import { ContactComponent } from './ContentPages/contact/contact.component';
+import { ConstructionApi } from './servers/constructionApi';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -34,7 +34,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [constructionApi],
+  providers: [ConstructionApi],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

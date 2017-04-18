@@ -49,6 +49,8 @@ namespace ConstructionComboApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, DataContext context)
         {
+            //app.UseCors("AllowAll");
+            //app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
             app.UseIdentity();
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
@@ -60,7 +62,6 @@ namespace ConstructionComboApp
             DbInitializer.Initialize(context); //initializes db
 
             app.UseMvc();
-            app.UseCors("AllowAll");
         }
     }
 }

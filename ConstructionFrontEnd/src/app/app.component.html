@@ -8,19 +8,6 @@
       <div  class="headerButton floatRight"><a [routerLink]="['/']">Home</a></div>
       <div class="headerButton floatRight"><a [routerLink]="['/contact']">Contact</a></div>
     </div>
-    <form *ngIf="disabledContent" name="loginForm" (ngSubmit)="attemptLogin(f)" #f="ngForm">
-      <div *ngIf="loginClicked" class="loginArea floatRight">
-          <label for="username"></label>
-          <input type="text" id="username" ngModel name="username" class="headerButton floatRight loginInput">
-          <label for="password"></label>
-          <input type="password" id="password" ngModel name="password" class="headerButton floatRight loginInput">
-      </div>
-      <div *ngIf="!loginClicked" class="loginArea floatRight">
-        <div (click)="toggleLoginFields()" class="headerButton floatRight">Login</div>
-        <div class="headerButton floatRight"><a [routerLink]="['/register']"></a>Register</div>
-      </div>
-      <button *ngIf="loginClicked" type="submit" class="headerButton floatRight loginButton">Login</button>
-    </form>
   </div>
 </div>
 <div class="siteBody">

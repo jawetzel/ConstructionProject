@@ -22,7 +22,6 @@ namespace ConstructionComboApp.Controllers
         {
             return "value";
         }
-
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
