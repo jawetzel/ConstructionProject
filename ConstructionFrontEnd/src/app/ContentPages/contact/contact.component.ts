@@ -32,7 +32,6 @@ export class ContactComponent implements OnInit {
       result => {
         this.formSubmitted = true;
         this.formSuccess = true;
-        console.log(JSON.parse(result.text()));
       },
       error => {
         this.formSuccess = false;

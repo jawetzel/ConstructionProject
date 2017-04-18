@@ -5,7 +5,7 @@
 }
 .siteHeaderSpacer{
   /* width: calc(100% - 725px); */
-  width: calc(100% - 420px);
+  width: calc(100% - 330px);
   min-height: 75px;
 }
 .centerTextAlign{
@@ -17,13 +17,13 @@
   width:100%;
   overflow-x: scroll;
 }
-@media screen and (max-width: 407px) {
+@media screen and (max-width: 327px) {
   .siteHeader {
     min-height: 150px;
   }
   .siteBody{
-    height: calc(100% - 185px);
-    min-height: calc(100% - 185px);
+    height: calc(100% - 183px);
+    min-height: calc(100% - 183px);
   }
 }
 
@@ -47,7 +47,7 @@
   cursor: default;
 }
 .titleArea{
-  min-width: 285px;
+  min-width: 225px;
 }
 
 .floatLeft{
