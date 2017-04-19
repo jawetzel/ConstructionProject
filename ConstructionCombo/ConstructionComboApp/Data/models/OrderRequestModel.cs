@@ -18,5 +18,6 @@ namespace ConstructionComboApp.Data.models
         public string AddressZip { get; set; }
         public string OrderDescription { get; set; }
         public Boolean Called { get; set; }
+        public Boolean IsActive { get; set; }
     }
 }

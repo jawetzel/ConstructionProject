@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {OrderRequestModel} from '../../../Models/UserViewModels';
+import {OrderRequestModel} from '../../../Models/OrderRequestModel';
 import {ConstructionApi} from 'app/servers/constructionApi';
 import {NgForm} from '@angular/forms';
 

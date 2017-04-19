@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Http, RequestOptions, Headers} from '@angular/http';
-import {OrderRequestModel} from '../../Models/UserViewModels';
+import {OrderRequestModel} from '../../Models/OrderRequestModel';
 
 const url = 'http://b2kconstructionllc.azurewebsites.net';
 // const url = 'http://localhost:65293';

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ConstructionComboApp.Data;
@@ -32,9 +33,11 @@ namespace ConstructionComboApp
         {
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DevLiveConnection")));
+
             services.AddIdentity<UserModel, IdentityRoleModel>()
                 .AddEntityFrameworkStores<DataContext>()
                 .AddDefaultTokenProviders();
+
             // Add framework services.
             services.AddMvc();
             services.AddCors(o => o.AddPolicy("AllowAll", builder =>
@@ -44,24 +47,45 @@ namespace ConstructionComboApp
                        .AllowAnyHeader()
                        .AllowCredentials();
             }));
+            services.AddCors(o => o.AddPolicy("allowLiveSites", builder =>
+            {
+                builder.WithOrigins("http://b2kconstruction.com")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+            }));
+            services.AddCors(o => o.AddPolicy("localHost", builder =>
+            {
+                builder.WithOrigins("http://localhost:4200")
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, DataContext context)
         {
-            //app.UseCors("AllowAll");
-            //app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
+            app.UseCors("allowLiveSites");
             app.UseIdentity();
 
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
+            app.Use(async (routecontext, next) =>
+            {
+                await next();
+                if (routecontext.Response.StatusCode == 404 && !Path.HasExtension(routecontext.Request.Path.Value))
+                {
+                    routecontext.Request.Path = "/index.html";
+                    await next();
+                }
+            })
+                .UseDefaultFiles(new DefaultFilesOptions { DefaultFileNames = new List<string> { "index.html" } })
+                .UseStaticFiles()
+                .UseMvc();
 
             DbInitializer.Initialize(context); //initializes db
-
-            app.UseMvc();
         }
     }
 }

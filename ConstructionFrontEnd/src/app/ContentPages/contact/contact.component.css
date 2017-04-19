@@ -27,7 +27,7 @@ textarea.ng-invalid.ng-touched {
   display: inline-block;
 }
 .displayInfoSide{
-  height: 500px;
+  min-height: 500px;
   vertical-align: top;
 }
 h1.displayInfo{
