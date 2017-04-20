@@ -38,7 +38,12 @@ namespace ConstructionComboApp.Controllers.AccountControllers
         [Route("login")]
         public JsonResult Login([FromBody] LoginViewModel input)
         {
-            return Json(new { success = true, order = input });
+            var token = _account.CreaseSessionToken(input);
+            if (token.Length > 0)
+            {
+                return Json(new { success = true, token = token });
+            }
+            return Json(new { success = false });
         }
 
     }

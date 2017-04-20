@@ -43,6 +43,7 @@ namespace ConstructionComboApp.DataAccess
             session.ExpireDateTime = DateTime.Now.AddHours(8);
             session.LastEditedDateTime = DateTime.Now;
             session.CreatedDateTime = DateTime.Now;
+            session.IsActive = true;
             session.Token = DateTime.Now.ToString(CultureInfo.InvariantCulture) + Guid.NewGuid().ToString() + Guid.NewGuid().ToString();
             try
             {

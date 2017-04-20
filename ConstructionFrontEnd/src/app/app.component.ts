@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ConstructionApi} from './servers/constructionApi';
-import {RegisterModel} from '../Models/AccountModels';
+import {LoginModel, RegisterModel} from '../Models/AccountModels';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,6 @@ export class AppComponent {
   }
   register() {
     const register = new RegisterModel;
-    register.UserName = 'jawetzel';
     register.Email = 'jawetzel615@gmail.com';
     register.Password = 'icewater';
     register.ConfirmPassword = 'icewater';
@@ -25,6 +24,19 @@ export class AppComponent {
         console.log(error);
       }
     );
+  }
+  login() {
+    const login = new LoginModel;
+    login.UserName = 'jawetzel615@gmail.com';
+    login.Password = 'icewater';
 
+    this._server.Login(login).subscribe(
+      result => {
+        console.log(result);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }
