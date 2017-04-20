@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConstructionComboApp.Data.models
 {
-    public class OrderRequestModel
+    public class OrderRequestModel : BaseDataModel
     {
-        [Key]
-        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
@@ -18,6 +16,5 @@ namespace ConstructionComboApp.Data.models
         public string AddressZip { get; set; }
         public string OrderDescription { get; set; }
         public Boolean Called { get; set; }
-        public Boolean IsActive { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ConstructionComboApp.Data.models;
+using ConstructionComboApp.Data.models.AccountModels;
 
 namespace ConstructionComboApp.Data
 {
@@ -12,29 +13,78 @@ namespace ConstructionComboApp.Data
         {
             context.Database.EnsureCreated();
 
-            if (context.OrderRequestModels.Any())
+            if (!context.OrderRequestModels.Any())
             {
-                return;   // DB has been seeded
-            }
-
-            var users = new OrderRequestModel[]
-            {
-                new OrderRequestModel
+                var users = new OrderRequestModel[]
                 {
+                    new OrderRequestModel
+                    {
 
-                    Name = "Joshua Wetzel",
-                    Email = "jawetzel615@gmail.com",
-                    PhoneNumber = "225-305-9321",
-                    AddressStreet = "36014 portsmouth dr",
-                    AddressCity = "Denham springs",
-                    AddressZip = "70706",
-                    OrderDescription = "need tile work yo",
-                    Called = false
+                        Name = "Joshua Wetzel",
+                        Email = "jawetzel615@gmail.com",
+                        PhoneNumber = "225-305-9321",
+                        AddressStreet = "36014 portsmouth dr",
+                        AddressCity = "Denham springs",
+                        AddressZip = "70706",
+                        OrderDescription = "need tile work yo",
+                        Called = false
+                    }
+                };
+                foreach (OrderRequestModel user in users)
+                {
+                    context.OrderRequestModels.Add(user);
                 }
-            };
-            foreach (OrderRequestModel user in users)
+            }
+            if (!context.Roles.Any())
             {
-                context.OrderRequestModels.Add(user);
+                var roles = new RoleModel[]
+                {
+                    new RoleModel
+                    {
+                        Rank = 5,
+                        Description = "Admin",
+                        CreatedDateTime = DateTime.Now,
+                        LastEditedDateTime = DateTime.Now,
+                        IsActive = true
+
+                    },
+                    new RoleModel
+                    {
+                        Rank = 4,
+                        Description = "Manager",
+                        CreatedDateTime = DateTime.Now,
+                        LastEditedDateTime = DateTime.Now,
+                        IsActive = true
+                    },
+                    new RoleModel
+                    {
+                        Rank = 3,
+                        Description = "Employee",
+                        CreatedDateTime = DateTime.Now,
+                        LastEditedDateTime = DateTime.Now,
+                        IsActive = true
+                    },
+                    new RoleModel
+                    {
+                        Rank = 2,
+                        Description = "Customer",
+                        CreatedDateTime = DateTime.Now,
+                        LastEditedDateTime = DateTime.Now,
+                        IsActive = true
+                    },
+                    new RoleModel
+                    {
+                        Rank = 1,
+                        Description = "User",
+                        CreatedDateTime = DateTime.Now,
+                        LastEditedDateTime = DateTime.Now,
+                        IsActive = true
+                    }
+                };
+                foreach (RoleModel role in roles)
+                {
+                    context.Roles.Add(role);
+                }
             }
             context.SaveChanges();
         }

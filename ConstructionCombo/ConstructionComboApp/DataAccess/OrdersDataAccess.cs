@@ -12,6 +12,7 @@ namespace ConstructionComboApp.DataAccess
     {
         public static OrderRequestModel SaveNewOrder(DataContext context, OrderRequestModel model)
         {
+            model.IsActive = true;
             context.Entry(model).State = EntityState.Added;
             context.SaveChanges();
             return model;
