@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ConstructionComboApp.Data;
 using ConstructionComboApp.Data.models.AccountModels;
+using ConstructionComboApp.DataAccess;
 using ConstructionComboApp.DataAccess.ViewModels.AccountViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,14 +12,26 @@ using Microsoft.AspNetCore.Mvc;
 namespace ConstructionComboApp.Controllers.AccountControllers
 {
     [Produces("application/json")]
-    [Route("api/Account")]
+    [Route("api")]
     public class AccountController : Controller
     {
+        private readonly DataContext _context;         //setup for DI
+        private readonly AccountDataAccess _account;
+        public AccountController(DataContext context, AccountDataAccess account)   //dependency injection yo
+        {
+            _context = context;
+            _account = account;
+        }
+
         [HttpPost]
         [Route("register")]
         public JsonResult Register([FromBody] RegisterViewModel input)
         {
-            return Json(new { success = true, order = input });
+            if (_account.CreateNewUser(input))
+            {
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
         }
 
         [HttpPost]

@@ -20,7 +20,6 @@ namespace ConstructionComboApp.DataAccess
             _context = context;
         }
 
-
         public bool CheckSessionToken(string token)
         {
             try
