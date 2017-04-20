@@ -20,7 +20,7 @@ namespace ConstructionComboApp.Data.models.AccountModels
         [Required]
         public string Password { get; set; }
         public bool VerifiedEmail { get; set; }
-
+        public byte[] Salt { get; set; }
 
         public RoleModel Role { get; set; }
         public ICollection<SessionModel> Sessions { get; set; }
