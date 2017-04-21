@@ -34,7 +34,7 @@ namespace ConstructionComboApp.DataAccess.DataAccessClasses
             }
         }
 
-        public string CreaseSessionToken(LoginViewModel user)
+        public SessionModel CreaseSessionToken(LoginViewModel user)
         {
             var session = new SessionModel();
             session.ExpireDateTime = DateTime.Now.AddHours(8);
@@ -48,11 +48,11 @@ namespace ConstructionComboApp.DataAccess.DataAccessClasses
                 session.UserId = session.User.Id;
                 _context.Sessions.Add(session);
                 _context.SaveChanges();
-                return session.Token;
+                return session;
             }
             catch (Exception e)
             {
-                return "";
+                return null;
             }
         }
 
@@ -82,6 +82,7 @@ namespace ConstructionComboApp.DataAccess.DataAccessClasses
                 CreatedDateTime = DateTime.Now,
                 LastEditedDateTime = DateTime.Now,
                 IsActive = true,
+                VerifiedEmail = false,
                 Email = user.Email
             };
             userModel = CreateCryptoForPassword(user.Password, userModel);
@@ -184,6 +185,11 @@ namespace ConstructionComboApp.DataAccess.DataAccessClasses
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
             return user;
+        }
+
+        public RoleModel GetRoleById(int input)
+        {
+            return _context.Roles.Where(role => role.Id == input).ToList().First();
         }
 
     }

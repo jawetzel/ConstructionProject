@@ -38,9 +38,9 @@ namespace ConstructionComboApp.Controllers.AccountControllers
         public JsonResult Login([FromBody] LoginViewModel input)
         {
             var token = _account.CreaseSessionToken(input);
-            if (token.Length > 0)
+            if (token.Token.Length > 0) //&& token.User.VerifiedEmail == true
             {
-                return Json(new { success = true, token = token });
+                return Json(new { success = true, token = token.Token, role = _account.GetRoleById(token.User.RoleId).Description });
             }
             return Json(new { success = false });
         }
