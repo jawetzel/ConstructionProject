@@ -4,8 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using ConstructionComboApp.Data;
-using ConstructionComboApp.Data.models;
-using ConstructionComboApp.DataAccess;
+using ConstructionComboApp.DataAccess.DataAccessClasses;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -36,6 +35,7 @@ namespace ConstructionComboApp
             //services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevLiveConnection")));
             services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<AccountDataAccess>();
+            services.AddScoped<OrdersDataAccess>();
 
             // Add framework services.
             services.AddMvc();

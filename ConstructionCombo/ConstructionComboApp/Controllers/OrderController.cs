@@ -6,6 +6,8 @@ using ConstructionComboApp.Data.models;
 using Microsoft.AspNetCore.Mvc;
 using ConstructionComboApp.Data;
 using ConstructionComboApp.DataAccess;
+using ConstructionComboApp.DataAccess.DataAccessClasses;
+using ConstructionComboApp.DataAccess.ViewModels;
 using ConstructionComboApp.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,11 +17,11 @@ namespace ConstructionComboApp.Controllers
     [Route("api")]
     public class OrderController : Controller
     {
-        private readonly DataContext _context;         //setup for DI
         private readonly AccountDataAccess _account;
-        public OrderController(DataContext context, AccountDataAccess account)   //dependency injection yo
+        private readonly OrdersDataAccess _orders;
+        public OrderController(AccountDataAccess account, OrdersDataAccess orders)   //dependency injection yo
         {
-            _context = context;
+            _orders = orders;
             _account = account;
         }
 
@@ -27,9 +29,24 @@ namespace ConstructionComboApp.Controllers
         [Route("newOrder")]
         public JsonResult NewOrder([FromBody] OrderRequestModel input)
         {
-            input = OrdersDataAccess.SaveNewOrder(_context, input);
+            input = _orders.SaveNewOrder(input);
             TextingService.MakeTwilioCall(input);
             return Json(new { success = true, order = input });
+        }
+
+        [HttpPost]
+        [Route("getActiveOrders")]
+        public JsonResult GetActiveOrders([FromBody] BaseViewModel token)
+        {
+            var tokenCheck = _account.CheckSessionToken(token.SessionToken);
+            if (tokenCheck)
+            {
+                var orders = _orders.GetActiveOrders();
+                return Json(new { success = true, orders = orders });
+
+            }
+            return Json(new { success = false });
+
         }
     }
 }

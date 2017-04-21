@@ -32,7 +32,18 @@ export class AppComponent {
 
     this._server.Login(login).subscribe(
       result => {
+        localStorage.setItem('token', result.json().token);
         console.log(result);
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+  getOrders() {
+    this._server.getActiveOrders().subscribe(
+      result => {
+        console.log(result.json());
       },
       error => {
         console.log(error);

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ConstructionComboApp.Data;
 using ConstructionComboApp.Data.models.AccountModels;
 using ConstructionComboApp.DataAccess;
+using ConstructionComboApp.DataAccess.DataAccessClasses;
 using ConstructionComboApp.DataAccess.ViewModels.AccountViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,11 +16,9 @@ namespace ConstructionComboApp.Controllers.AccountControllers
     [Route("api")]
     public class AccountController : Controller
     {
-        private readonly DataContext _context;         //setup for DI
         private readonly AccountDataAccess _account;
-        public AccountController(DataContext context, AccountDataAccess account)   //dependency injection yo
+        public AccountController(AccountDataAccess account)   //dependency injection yo
         {
-            _context = context;
             _account = account;
         }
 

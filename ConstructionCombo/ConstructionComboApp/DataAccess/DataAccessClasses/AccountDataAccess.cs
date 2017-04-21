@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
 using ConstructionComboApp.Data;
 using ConstructionComboApp.Data.models.AccountModels;
-using ConstructionComboApp.DataAccess.ViewModels;
 using ConstructionComboApp.DataAccess.ViewModels.AccountViewModels;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
-namespace ConstructionComboApp.DataAccess
+namespace ConstructionComboApp.DataAccess.DataAccessClasses
 {
     public class AccountDataAccess
     {
