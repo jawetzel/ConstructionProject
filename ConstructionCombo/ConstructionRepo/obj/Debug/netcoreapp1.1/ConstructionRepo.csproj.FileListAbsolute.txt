@@ -1,0 +1,7 @@
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\bin\Debug\netcoreapp1.1\ConstructionRepo.deps.json
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\bin\Debug\netcoreapp1.1\ConstructionRepo.dll
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\obj\Debug\netcoreapp1.1\ConstructionRepo.csprojResolveAssemblyReference.cache
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\obj\Debug\netcoreapp1.1\ConstructionRepo.AssemblyInfo.cs
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\bin\Debug\netcoreapp1.1\ConstructionRepo.pdb
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\obj\Debug\netcoreapp1.1\ConstructionRepo.dll
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionRepo\obj\Debug\netcoreapp1.1\ConstructionRepo.pdb
