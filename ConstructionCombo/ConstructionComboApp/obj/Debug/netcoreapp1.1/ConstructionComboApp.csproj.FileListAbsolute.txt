@@ -7,3 +7,5 @@ C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\De
 C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Debug\netcoreapp1.1\ConstructionComboApp.pdb
 C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\Debug\netcoreapp1.1\ConstructionComboApp.dll
 C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\obj\Debug\netcoreapp1.1\ConstructionComboApp.pdb
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Debug\netcoreapp1.1\ConstructionRepo.dll
+C:\PersonalData\Repos\Construction\ConstructionCombo\ConstructionComboApp\bin\Debug\netcoreapp1.1\ConstructionRepo.pdb

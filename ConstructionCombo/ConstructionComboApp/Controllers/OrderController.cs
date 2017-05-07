@@ -2,13 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ConstructionComboApp.Data.models;
 using Microsoft.AspNetCore.Mvc;
-using ConstructionComboApp.Data;
-using ConstructionComboApp.DataAccess;
-using ConstructionComboApp.DataAccess.DataAccessClasses;
-using ConstructionComboApp.DataAccess.ViewModels;
 using ConstructionComboApp.Services;
+using ConstructionRepo.Data.models;
+using ConstructionRepo.Data.models.OrderModels;
+using ConstructionRepo.DataAccess.DataAccessClasses;
+using ConstructionRepo.DataAccess.ViewModels;
 using Microsoft.EntityFrameworkCore;
 
 namespace ConstructionComboApp.Controllers

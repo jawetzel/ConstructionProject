@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using ConstructionComboApp.Data;
-using ConstructionComboApp.DataAccess.DataAccessClasses;
+using ConstructionRepo.Data;
+using ConstructionRepo.DataAccess.DataAccessClasses;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -32,10 +32,15 @@ namespace ConstructionComboApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevLiveConnection")));
-            //services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            // Database Connection
+            //services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevLiveConnection")));
+            services.AddDbContext<DataContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            // Data Access
             services.AddScoped<AccountDataAccess>();
             services.AddScoped<OrdersDataAccess>();
+
+            // Business Logic
 
             // Add framework services.
             services.AddMvc();

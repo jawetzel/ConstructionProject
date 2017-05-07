@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v1.1": {
       "constructioncomboapp/1.0.0": {
         "dependencies": {
+          "ConstructionRepo": "1.0.0",
           "Microsoft.ApplicationInsights.AspNetCore": "2.0.0",
           "Microsoft.AspNetCore": "1.1.1",
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "1.1.1",
@@ -1930,6 +1931,19 @@
         },
         "compile": {
           "lib/netstandard1.4/Twilio.dll": {}
+        }
+      },
+      "constructionrepo/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "1.1.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.1.1",
+          "Microsoft.NETCore.App": "1.1.1"
+        },
+        "runtime": {
+          "ConstructionRepo.dll": {}
+        },
+        "compile": {
+          "ConstructionRepo.dll": {}
         }
       },
       "libuv/1.9.1": {
@@ -4447,6 +4461,11 @@
       "sha512": "sha512-yfxqNsVX5RW5s2NxaFQwX1YBBxoKzciLT6lpLZcOOFp/dOabD8xRbDJo7bcL/mHpvTu66Iq5kqGBuzhS1qIVzA==",
       "path": "twilio/5.3.0",
       "hashPath": "twilio.5.3.0.nupkg.sha512"
+    },
+    "constructionrepo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "libuv/1.9.1": {
       "type": "package",
