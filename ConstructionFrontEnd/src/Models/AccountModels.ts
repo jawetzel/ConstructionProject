@@ -12,4 +12,3 @@ export class LoginModel {
 export class TokenModel {
   SessionToken: string;
 }
-
