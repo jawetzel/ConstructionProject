@@ -1,0 +1,108 @@
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.contactFormSection{
+  background-color: rgba(255, 255, 255, 0.6);
+  width: calc(50% - 70px);
+  min-width: 260px ;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  font-family: sans-serif, 'Montserrat';
+}
+
+@media screen and (max-width: 642px) {
+  .contactFormSection {
+    width: calc(100% - 70px);
+  }
+}
+
+.displayInfoSide{
+  min-height: 500px;
+  vertical-align: top;
+}
+h1.displayInfo{
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+h2.displayInfo{
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: left;
+  margin: 10px;
+}
+p.displayInfo{
+  font-size: 1.25em;
+  font-weight: 500;
+  text-align: left;
+  margin: 10px;
+  padding-left: 30px;
+}
+
+.formInput{
+  text-align: left;
+  padding: 5px;
+  margin: 2px;
+}
+
+.formTitle{
+  font-weight: 600;
+  font-size: 1em;
+  text-align: center;
+  min-width: 125px;
+  display: inline-block;
+}
+.formField{
+  display: inline-block;
+  width: calc( 100% - 135px);
+}
+.descriptionTitle{
+  font-weight: 600;
+  font-size: large;
+  text-align: center;
+  width:100%;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+.descriptionField{
+  padding: 10px;
+  font-size: large;
+  width: calc(100% - 20px);
+  height:200px;
+  display: inline-block;
+  columns: 50;
+  border-radius: 10px;
+}
+.headerButton:hover{
+  background-color: rgba(255, 255, 255, 1);
+}
+.headerButton{
+  margin: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.75);
+  font-family: sans-serif, 'Montserrat';
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+.successDisplay{
+  background-color: rgba(255, 255, 255, .9);
+  color: green;
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 5px;
+  border-radius: 10px;
+}
+.failureDisplay{
+  background-color: rgba(255, 255, 255, .9);
+  color: indianred;
+  font-weight: 600;
+  font-size: 1.5em;
+  padding: 5px;
+  border-radius: 10px;
+}

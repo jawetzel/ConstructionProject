@@ -1,0 +1,12 @@
+.floatLeft{
+  float: left;
+}
+.floatRight{
+  float: right;
+}
+.inLineBlock{
+  display: inline-block;
+}
+.centerTextAlign{
+  text-align: center;
+}

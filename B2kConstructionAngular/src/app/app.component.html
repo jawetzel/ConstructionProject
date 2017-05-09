@@ -1,0 +1,24 @@
+<div class="fullWidth siteHeader top centerTextAlign">
+  <div class="fullHeight titleArea inLineBlock">
+    <a [routerLink]="['/']"><img class="fullHeight pull-left floatLeft logoImg" src="../assets/LogoWithName.jpg"/></a>
+  </div>
+  <div class="siteHeaderSpacer inLineBlock"></div>
+  <div class="linkArea inLineBlock">
+    <div class="linkColumn floatRight">
+      <div  class="headerButton floatRight"><a [routerLink]="['/']">Home</a></div>
+      <div class="headerButton floatRight"><a [routerLink]="['/contact']">Contact</a></div>
+    </div>
+  </div>
+</div>
+<div class="siteBody">
+  <router-outlet></router-outlet>
+</div>
+<div class="siteFooter">
+  <div class="footerSpan floatLeft">
+    <a href="https://www.facebook.com/b2kconstructionllc2000">B2KConstruction</a>
+  </div>
+  <div class="floatLeft footerSpacer footerSpan">|</div>
+  <div class="footerSpan floatLeft">
+    Phone: 985-227-8857
+  </div>
+</div>
