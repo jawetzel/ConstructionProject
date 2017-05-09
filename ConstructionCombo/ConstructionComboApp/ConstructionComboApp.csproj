@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\AccountControllers\**" />
-    <Content Remove="Controllers\AccountControllers\**" />
-    <EmbeddedResource Remove="Controllers\AccountControllers\**" />
-    <None Remove="Controllers\AccountControllers\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="wwwroot\favicon.ico" />
     <Content Include="wwwroot\main.0ef3fa824e85a1222368.bundle.js" />
     <Content Include="wwwroot\TilePttern.2dae2fc774e8ef215d82.jpg" />
@@ -35,6 +28,11 @@
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\AccountControllers\" />
+    <Folder Include="Controllers\AccountControllers\" />
+    <Folder Include="Controllers\AccountControllers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ConstructionRepo\ConstructionRepo.csproj" />
