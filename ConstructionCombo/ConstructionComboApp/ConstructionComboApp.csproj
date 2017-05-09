@@ -32,10 +32,6 @@
   <ItemGroup>
     <Folder Include="Controllers\AccountControllers\" />
     <Folder Include="Controllers\AccountControllers\" />
-    <Folder Include="Controllers\AccountControllers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConstructionRepo\ConstructionRepo.csproj" />
   </ItemGroup>
 
 </Project>
