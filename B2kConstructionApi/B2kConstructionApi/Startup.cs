@@ -4,6 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreRepo.Data;
+using CoreRepo.DataAccess;
+using CoreRepo.DataAccess.Account;
+using CoreRepo.DataAccess.Orders;
+using CoreRepo.DataAccess.Work;
+using CoreRepo.DataAccess.Work.Expenses;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -35,7 +40,23 @@ namespace B2kConstructionApi
             //services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LiveConnection")));
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalHostConnection")));
 
-            //services.AddScoped<AccountDataAccess>(); //sample Data Access DI For when we get there
+            
+            services.AddScoped<DataAccess>();
+            // Account
+            services.AddScoped<UserDataAccess>();
+            services.AddScoped<SessionDataAccess>();
+            services.AddScoped<UsersRolesDataAccess>();
+            services.AddScoped<RoleDataAccess>();
+            // Order
+            services.AddScoped<OrderRequestDataAccess>();
+            services.AddScoped<OrderDataAccess>();
+            //Work
+            services.AddScoped<WorkSessionDataAccess>();
+            services.AddScoped<WorkImageDataAccess>();
+            services.AddScoped<ExpensesDataAccess>();
+            services.AddScoped<ExpenseTypeDataAccess>();
+            services.AddScoped<ImageTypeDataAccess>();
+
 
 
 
