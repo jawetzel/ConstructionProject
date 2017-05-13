@@ -61,6 +61,21 @@ namespace CoreRepo.DataAccess.Account
             }
         }
 
+        public bool CreateSession(Session sess)
+        {
+            try
+            {
+                DbContext.Sessions.Add(sess);
+                DbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return false;
+            }
+        }
+
         public Session UpdateSession(Session session)
         {
             try

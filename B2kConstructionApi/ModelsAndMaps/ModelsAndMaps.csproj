@@ -6,8 +6,10 @@
 
   <ItemGroup>
     <Folder Include="ServiceModels\" />
-    <Folder Include="ResponseModels\" />
-    <Folder Include="RequestModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreRepo\CoreRepo.csproj" />
   </ItemGroup>
 
 </Project>

@@ -57,10 +57,7 @@ namespace B2kConstructionApi
             services.AddScoped<ExpenseTypeDataAccess>();
             services.AddScoped<ImageTypeDataAccess>();
 
-
-
-
-
+            
             // Add framework services.
             services.AddMvc();
 

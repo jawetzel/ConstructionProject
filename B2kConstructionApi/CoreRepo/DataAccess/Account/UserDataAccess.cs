@@ -64,6 +64,21 @@ namespace CoreRepo.DataAccess.Account
             }
         }
 
+        public User CreateNewUser(User user)
+        {
+            try
+            {
+                DbContext.Users.Add(user);
+                DbContext.SaveChanges();
+                return user;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+        }
+
         public User UpdateUser(User user)
         {
             try
