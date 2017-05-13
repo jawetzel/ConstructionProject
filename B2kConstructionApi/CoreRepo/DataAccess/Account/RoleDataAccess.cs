@@ -46,7 +46,7 @@ namespace CoreRepo.DataAccess.Account
             }
         }
 
-        public Role EditRole(Role role)
+        public Role UpdateRole(Role role)
         {
             try
             {

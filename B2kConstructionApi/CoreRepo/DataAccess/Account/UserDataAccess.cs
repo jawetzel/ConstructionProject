@@ -64,7 +64,7 @@ namespace CoreRepo.DataAccess.Account
             }
         }
 
-        public User EditUser(User user)
+        public User UpdateUser(User user)
         {
             try
             {

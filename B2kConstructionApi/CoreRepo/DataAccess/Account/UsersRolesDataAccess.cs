@@ -27,12 +27,12 @@ namespace CoreRepo.DataAccess.Account
 
         public List<UsersRoles> GetListOfAllUsersRolesesByUserName(string name)
         {
-            return DbContext.UsersRoles.Where(usersRoles => usersRoles.IsActive && usersRoles.User.Name == name).ToList();
+            return DbContext.UsersRoles.Where(usersRoles => usersRoles.IsActive && usersRoles.User.Name.Contains(name)).ToList();
         }
 
         public List<UsersRoles> GetListOfAllUsersRolesesByUserEmail(string email)
         {
-            return DbContext.UsersRoles.Where(usersRoles => usersRoles.IsActive && usersRoles.User.Email == email).ToList();
+            return DbContext.UsersRoles.Where(usersRoles => usersRoles.IsActive && usersRoles.User.Email.Contains(email)).ToList();
         }
 
         public UsersRoles GetUsersRolesById(int id)
@@ -48,7 +48,7 @@ namespace CoreRepo.DataAccess.Account
             }
         }
 
-        public UsersRoles EditUsersRole(UsersRoles userRole)
+        public UsersRoles UpdateUsersRole(UsersRoles userRole)
         {
             try
             {
