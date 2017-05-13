@@ -25,7 +25,12 @@ namespace CoreRepo.Data.Work.Expenses
         public ExpenseType ExpenseType { get; set; }
 
         [ForeignKey("WorkImage")]
-        public int WorkImageId { get; set; }
+        public int? WorkImageId { get; set; }
         public WorkImage WorkImage { get; set; }
+
+        [ForeignKey("WorkSession")]
+        public int WorkSessionID { get; set; }
+        public WorkSession WorkSession { get; set; }
+
     }
 }

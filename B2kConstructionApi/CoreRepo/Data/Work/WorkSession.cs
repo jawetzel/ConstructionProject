@@ -37,5 +37,6 @@ namespace CoreRepo.Data.Work
         public Order Order { get; set; }
 
         public ICollection<WorkImage> WorkImages { get; set; }
+        public ICollection<WorkSession> WorkSessions { get; set; }
     }
 }
