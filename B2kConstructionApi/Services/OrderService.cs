@@ -1,6 +1,7 @@
 ﻿
 using CoreRepo.Data.Orders;
 using CoreRepo.DataAccess;
+using System.Collections.Generic;
 
 namespace Services
 {//begin namespace
@@ -15,19 +16,32 @@ namespace Services
             Data = dataAccess;
         }//end constructor
 
-        public void CreateOrderFromOrderRequestId(int newId)
+        public void CreateOrder(int orderId)
         {//begin method
-            var orderRequest = Data.OrderRequestData.GetOrderRequestById(newId);
+            var orderRequest = Data.OrderRequestData.GetOrderRequestById(orderId);
             Data.OrderData.CreateOrder(orderRequest);
         }//end method
 
-        public void CreateOrderFromOrderRequest(OrderRequest newOrderRequest)
+        public void CreateOrder(OrderRequest newOrderRequest)
         {//begin method
             Data.OrderData.CreateOrder(newOrderRequest);
         }//end method
 
+        public void UpdateOrder(int orderId)
+        {//begin method
+            var newOrder = Data.OrderData.GetOrderById(orderId);
+            Data.OrderData.UpdateOrder(newOrder);
+        }//end method
 
+        public void UpdateOrder(Order newOrder)
+        {//beging method
+            Data.OrderData.UpdateOrder(newOrder);
+        }//end method
 
+        public List<Order> GetListOfAllOrders()
+        {//begin method
+            return Data.OrderData.GetListOfAllOrders();
+        }//end method
 
 
 
