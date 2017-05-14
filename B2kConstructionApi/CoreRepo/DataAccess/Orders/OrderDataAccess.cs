@@ -1,7 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using CoreRepo.Data;
 using CoreRepo.Data.Orders;
 
@@ -27,7 +27,7 @@ namespace CoreRepo.DataAccess.Orders
             return DbContext.Orders.Where(order => order.IsActive && order.IsAppointmentNeeded).ToList();
         }//end method
 
-        public List<Order> GetListOfAllOrdersComleted()
+        public List<Order> GetListOfAllOrdersCompleted()
         {//begin method
             return DbContext.Orders.Where(order => order.IsActive && order.IsCompleted).ToList();
         }//end method
@@ -42,7 +42,7 @@ namespace CoreRepo.DataAccess.Orders
             return DbContext.Orders.Where(order => order.IsActive && order.User.Name.ToLower().Contains(name.ToLower())).ToList();
         }//end method
 
-        public Order GetListOfAllOrdersByOrderRequestId(int id)
+        public Order GetOrderByOrderRequestId(int id)
         {//begin method
             try
             {//begin try
